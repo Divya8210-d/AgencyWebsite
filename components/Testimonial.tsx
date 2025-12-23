@@ -1,9 +1,19 @@
 import React from "react";
+interface TestimonialCardProps {
+  text: string;
+  name: string;
+  role: string;
+}
 
-const TestimonialCard = ({ text, name, role }) => {
+
+const TestimonialCard: React.FC<TestimonialCardProps> = ({
+  text,
+  name,
+  role,
+}) => {
   return (
     <div className="w-full max-w-[350px] rounded-3xl bg-white/5 backdrop-blur-md border border-white/10 p-8 text-white shadow-2xl transition-transform hover:scale-105">
-      <p className="text-xl leading-5 text-white font-normal ">
+      <p className="text-xl leading-5 font-normal">
         {text}
       </p>
 
@@ -19,6 +29,7 @@ const TestimonialCard = ({ text, name, role }) => {
     </div>
   );
 };
+
 
 const Testimonials = () => {
   return (
