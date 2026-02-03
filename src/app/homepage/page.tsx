@@ -9,20 +9,28 @@ import Footer from "../../../components/Footer";
 
 export default function Homepage() {
   return (
-    < div  className="bg-black min-h-screen">
-      
+    < div className="bg-black min-h-screen">
 
 
-<Hero/>
 
-<About/>
+      <div id="home">
+        <Hero />
+      </div>
 
-<Services/>
+      <div id="aboutus">
+        <About />
+      </div>
 
-<Project/>
-<Testimonials/>
-<Contact/>
-<Footer/>
+      <Services />
+
+      <div id="projects">
+        <Project />
+      </div>
+      <Testimonials />
+      <div id="contact">
+        <Contact />
+      </div>
+      <Footer />
 
 
 
