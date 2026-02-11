@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono ,Bebas_Neue} from "next/font/google";
+import { Geist, Geist_Mono, Bebas_Neue, Poppins } from "next/font/google";
 import "./globals.css";
 
 const bebasNeue = Bebas_Neue({
   weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const poppins = Poppins({
+  variable: "--font-poppins",
+  weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
   display: "swap",
 });
@@ -31,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={bebasNeue.className}
+        className={`${bebasNeue.className} ${poppins.variable} antialiased`}
       >
         {children}
       </body>

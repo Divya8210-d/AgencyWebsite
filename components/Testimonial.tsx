@@ -19,15 +19,15 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
 }) => {
   return (
     <div className="testimonial-card w-full max-w-[350px] rounded-3xl bg-white/5 backdrop-blur-md border border-white/10 p-8 text-white shadow-2xl transition-transform hover:scale-[1.03]">
-      <p className="text-base sm:text-xl leading-relaxed font-normal">
+      <p className="text-lg sm:text-xl leading-relaxed font-normal font-poppins">
         {text}
       </p>
 
       <div className="mt-6 flex items-center gap-4">
         <div className="h-10 w-10 rounded-full bg-gray-200 shrink-0" />
         <div>
-          <h4 className="text-lg sm:text-xl font-medium">{name}</h4>
-          <span className="text-xs sm:text-sm text-cyan-400/80 uppercase tracking-wider font-medium">
+          <h4 className="text-lg sm:text-xl font-medium font-poppins">{name}</h4>
+          <span className="text-sm sm:text-base text-cyan-400/80 uppercase tracking-wider font-medium font-poppins">
             {role}
           </span>
         </div>
@@ -125,7 +125,7 @@ const Testimonials = () => {
       {/* CONTENT */}
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 md:px-12">
         {/* HEADER */}
-        <div className="mb-16 md:mb-24 testimonials-heading  sm:text-center  lg:text-left">
+        <div className="mb-16 md:mb-24 testimonials-heading text-center lg:text-left">
           <h2 className="text-[64px] sm:text-[84px] md:text-[96px] font-bold leading-tight tracking-tight">
             <span className="block">
               <span className="text-cyan-400">TRUST</span> THAT STARTED
@@ -139,19 +139,19 @@ const Testimonials = () => {
         {/* CARDS GRID */}
         <div className="grid grid-rows-2 gap-y-16 md:gap-y-24 w-full">
           {/* TOP ROW */}
-      <div className="row-top flex flex-col items-center md:flex-row md:items-start justify-between gap-8 lg:gap-24">
-  <TestimonialCard
-    text="Soqure Agency made a well-designed landing page with consistent professionalism and clear communication."
-    name="Ashok Chhabra"
-    role="Blog Writer"
-  />
+          <div className="row-top flex flex-col items-center md:flex-row md:items-start justify-between gap-8 lg:gap-24">
+            <TestimonialCard
+              text="Soqure Agency made a well-designed landing page with consistent professionalism and clear communication."
+              name="Ashok Chhabra"
+              role="Blog Writer"
+            />
 
-  <TestimonialCard
-    text="Soqure Agency delivered a polished landing page with professionalism and clear communication."
-    name="Ayaarodi"
-    role="Coconuts Roots Founder"
-  />
-</div>
+            <TestimonialCard
+              text="Soqure Agency delivered a polished landing page with professionalism and clear communication."
+              name="Ayaarodi"
+              role="Coconuts Roots Founder"
+            />
+          </div>
 
 
           {/* BOTTOM ROW */}

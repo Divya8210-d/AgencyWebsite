@@ -2,7 +2,7 @@
 
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -10,6 +10,17 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Contact() {
   const contactRef = useRef(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    number: "",
+    about: "",
+  });
+  const [status, setStatus] = useState({
+    loading: false,
+    success: false,
+    error: "",
+  });
 
   useEffect(() => {
     const isMobile = window.innerWidth < 768;
@@ -58,6 +69,35 @@ export default function Contact() {
     return () => ctx.revert();
   }, []);
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async () => {
+    setStatus({ loading: true, success: false, error: "" });
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus({ loading: false, success: true, error: "" });
+        setFormData({ name: "", email: "", number: "", about: "" });
+        alert("Email sent successfully!");
+      } else {
+        throw new Error("Failed to send email");
+      }
+    } catch (error) {
+      console.error(error);
+      setStatus({ loading: false, success: false, error: "Failed to send email. Please try again." });
+      alert("Failed to send email. Please try again.");
+    }
+  };
+
   return (
     <section
       ref={contactRef}
@@ -67,36 +107,48 @@ export default function Contact() {
       <div className="grid grid-rows-3 gap-12  max-w-7xl mx-auto">
         {/* HEADING */}
         <div className="contact-heading flex items-end justify-center md:items-start md:justify-start">
-  <h1 className="text-[64px] sm:text-[84px] lg:text-[96px] font-bold leading-tight text-center md:text-left">
-    <span className="block">LET’S PLAN YOUR</span>
-    <span className="block text-cyan-400">DIGITAL PRESENCE</span>
-  </h1>
-</div>
+          <h1 className="text-[64px] sm:text-[84px] lg:text-[96px] font-bold leading-tight text-center md:text-left">
+            <span className="block">LET’S PLAN YOUR</span>
+            <span className="block text-cyan-400">DIGITAL PRESENCE</span>
+          </h1>
+        </div>
 
 
         {/* FORM */}
         <div className="contact-form grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 text-base sm:text-xl">
           <input
             type="text"
+            name="name"
             placeholder="Name"
+            value={formData.name}
+            onChange={handleChange}
             className="contact-input bg-[#263238] rounded-2xl px-6 py-4 outline-none placeholder-gray-300"
           />
 
           <input
             type="email"
+            name="email"
             placeholder="E - Mail"
+            value={formData.email}
+            onChange={handleChange}
             className="contact-input bg-[#263238] rounded-2xl px-6 py-4 outline-none placeholder-gray-300"
           />
 
           <input
             type="text"
+            name="number"
             placeholder="Phone No."
+            value={formData.number}
+            onChange={handleChange}
             className="contact-input bg-[#263238] rounded-2xl px-6 py-4 outline-none placeholder-gray-300"
           />
 
           <input
             type="text"
+            name="about"
             placeholder="About the Project"
+            value={formData.about}
+            onChange={handleChange}
             className="contact-input bg-[#263238] rounded-2xl px-6 py-4 outline-none placeholder-gray-300"
           />
         </div>
@@ -104,9 +156,15 @@ export default function Contact() {
         {/* BUTTON */}
         <div className="flex justify-center md:justify-end">
           <div className="contact-btn rounded-[83px] border-2 border-white flex items-center gap-4 p-3 sm:p-4 h-fit backdrop-blur-sm">
-            <p className="text-lg sm:text-2xl font-medium">Send Request</p>
+            <p className="text-lg sm:text-2xl font-medium">
+              {status.loading ? "Sending..." : "Send Request"}
+            </p>
 
-            <button className="bg-[#00C8FF] rounded-full p-3 sm:p-4 flex items-center justify-center hover:bg-[#0dd3ff] transition">
+            <button
+              onClick={handleSubmit}
+              disabled={status.loading}
+              className="bg-[#00C8FF] rounded-full p-3 sm:p-4 flex items-center justify-center hover:bg-[#0dd3ff] transition disabled:opacity-50"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
