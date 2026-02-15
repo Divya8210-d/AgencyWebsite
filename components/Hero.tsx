@@ -109,7 +109,7 @@ export function Hero() {
     <div ref={heroRef} className="relative w-full overflow-hidden">
       {/* BACKGROUND VIDEO */}
       <video
-        src="/hero.mp4"
+        src="https://res.cloudinary.com/dad2siqxd/video/upload/v1771183554/hero_nfcbwm.mp4"
         autoPlay
         loop
         playsInline

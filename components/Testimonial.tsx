@@ -110,9 +110,8 @@ const Testimonials = () => {
       <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
         <div className="relative h-full w-full max-w-4xl opacity-80">
           <video
-            src="/testimonial.mp4"
+            src="https://res.cloudinary.com/dad2siqxd/video/upload/v1771183552/testimonial_stbx5o.mp4"
             autoPlay
-            muted
             loop
             playsInline
             className="testimonial-video h-full w-full object-cover md:object-contain"

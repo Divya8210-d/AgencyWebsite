@@ -243,10 +243,9 @@ export function Services() {
         {/* VIDEO SECOND ON MOBILE */}
         <div className="flex justify-center items-start order-2 lg:order-1 mt-8 lg:mt-0">
           <video
-            src="/websitevideo.mp4"
+            src="https://res.cloudinary.com/dad2siqxd/video/upload/v1771183553/websitevideo_teuive.mp4"
             autoPlay
             loop
-            muted
             playsInline
             className="w-full h-[260px] sm:h-[360px] lg:h-full object-cover rounded-xl"
           />
