@@ -134,15 +134,13 @@ export function Hero() {
 
           {/* SOCIAL MEDIA - Hidden on very small screens or stacked */}
           <div className="social-wrapper grid grid-cols-2 gap-4 w-fit h-fit hidden sm:grid lg:grid order-2 lg:order-1 mt-4 lg:mt-0">
-            <a href="#" className="w-8 social-item block">
+            <a href="https://www.linkedin.com/company/devignservices/about/?viewAsMember=true" className="w-8 social-item block">
               <img src="/linkedin.png" className="w-full" />
             </a>
-            <a href="#" className="w-8 social-item block">
+            <a href="https://www.behance.net/hiyanshugupta" className="w-8 social-item block">
               <img src="/behance.png" className="w-full" />
             </a>
-            <a href="#" className="w-8 social-item block">
-              <img src="/x.png" className="w-full" />
-            </a>
+          
             <p className="text-xs leading-tight social-item font-poppins">
               Social<br />Media
             </p>

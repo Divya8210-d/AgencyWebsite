@@ -76,7 +76,7 @@ export default function Contact() {
   const handleSubmit = async () => {
     setStatus({ loading: true, success: false, error: "" });
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/contact`, {
+      const response = await fetch(`https://devignbackend.onrender.com/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

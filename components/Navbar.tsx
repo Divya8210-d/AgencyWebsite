@@ -71,14 +71,11 @@ export default function Navbar() {
 
             {/* Social Links in Mobile Menu */}
             <div className="flex gap-6 mt-8">
-              <a href="#" className="w-8 block opacity-80 hover:opacity-100">
+              <a href="https://www.linkedin.com/company/devignservices/about/?viewAsMember=true" className="w-8 block opacity-80 hover:opacity-100">
                 <img src="/linkedin.png" alt="LinkedIn" className="w-full" />
               </a>
-              <a href="#" className="w-8 block opacity-80 hover:opacity-100">
+              <a href="https://www.behance.net/hiyanshugupta" className="w-8 block opacity-80 hover:opacity-100">
                 <img src="/behance.png" alt="Behance" className="w-full" />
-              </a>
-              <a href="#" className="w-8 block opacity-80 hover:opacity-100">
-                <img src="/x.png" alt="X" className="w-full" />
               </a>
             </div>
 
