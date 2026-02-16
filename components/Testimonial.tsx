@@ -140,13 +140,13 @@ const Testimonials = () => {
           {/* TOP ROW */}
           <div className="row-top flex flex-col items-center md:flex-row md:items-start justify-between gap-8 lg:gap-24">
             <TestimonialCard
-              text="Soqure Agency made a well-designed landing page with consistent professionalism and clear communication."
+              text="Devign Agency made a well-designed landing page with consistent professionalism and clear communication."
               name="Ashok Chhabra"
               role="Blog Writer"
             />
 
             <TestimonialCard
-              text="Soqure Agency delivered a polished landing page with professionalism and clear communication."
+              text="Devign Agency delivered a polished landing page with professionalism and clear communication."
               name="Ayaarodi"
               role="Coconuts Roots Founder"
             />

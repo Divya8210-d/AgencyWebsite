@@ -41,8 +41,8 @@ export default function Footer() {
           <div className="flex flex-col gap-4">
             <h3 className="text-xl font-semibold mb-2">Connect With Us</h3>
             <p className="text-gray-300">
-              <a href="mailto:contact@duowebs.com" className="hover:text-cyan-400 transition-colors">
-                contact@duowebs.com
+              <a href="mailto:devignservices@gmail.com" className="hover:text-cyan-400 transition-colors">
+                devignservices@gmail.com
               </a>
             </p>
             <div className="flex gap-4 mt-2">

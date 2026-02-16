@@ -194,10 +194,10 @@ export function Hero() {
             </div>
 
             <div className="hero-card bg-white text-black p-6 rounded-3xl w-full sm:w-56 shadow-xl">
-              <h1 className="text-4xl font-bold font-poppins">80+</h1>
+              <h1 className="text-4xl font-bold font-poppins">20+</h1>
               <p className="opacity-80 text-base font-poppins">Projects</p>
               <p className="text-sm mt-2 opacity-70 leading-tight font-poppins">
-                Clients across 12+ countries.
+                Clients across multiple countries.
               </p>
             </div>
           </div>
