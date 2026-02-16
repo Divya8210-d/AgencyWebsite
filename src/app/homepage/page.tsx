@@ -21,7 +21,9 @@ export default function Homepage() {
         <About />
       </div>
 
-      <Services />
+      <div id="services">
+        <Services />
+      </div>
 
       <div id="projects">
         <Project />
