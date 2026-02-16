@@ -5,6 +5,7 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import axios from "axios";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -73,32 +74,38 @@ export default function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async () => {
-    setStatus({ loading: true, success: false, error: "" });
-    try {
-      const response = await fetch(`https://devignbackend.onrender.com/contact`, {
-        method: "POST",
+
+
+const handleSubmit = async () => {
+  setStatus({ loading: true, success: false, error: "" });
+
+  try {
+    const response = await axios.post(
+      "https://devignbackend.onrender.com/contact",
+      formData,
+      {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setStatus({ loading: false, success: true, error: "" });
-        setFormData({ name: "", email: "", number: "", about: "" });
-        console.log(response);
-        
-        alert("Email sent successfully!");
-      } else {
-        throw new Error("Failed to send email");
       }
-    } catch (error) {
-      console.error(error);
-      setStatus({ loading: false, success: false, error: "Failed to send email. Please try again." });
-      alert("Failed to send email. Please try again.");
-    }
-  };
+    );
+
+    setStatus({ loading: false, success: true, error: "" });
+    setFormData({ name: "", email: "", number: "", about: "" });
+
+    alert("Email sent successfully!");
+  } catch (error) {
+    console.error(error);
+    setStatus({
+      loading: false,
+      success: false,
+      error: "Failed to send email. Please try again.",
+    });
+
+    alert("Failed to send email. Please try again.");
+  }
+};
+
 
   return (
     <section
