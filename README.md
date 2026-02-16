@@ -2,10 +2,9 @@
 
 <div align="center">
 
-![Devign Logo](https://img.shields.io/badge/Devign-Digital_Agency-blue?style=for-the-badge)
+[![Devign Logo](https://img.shields.io/badge/Devign-Digital_Agency-blue?style=for-the-badge)](https://www.devign.co.in/)
 [![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
-[![Live Demo](https://img.shields.io/badge/Live-Demo-green?style=for-the-badge)](https://www.devign.co.in/)
 
 **A modern, full-featured digital agency portfolio and service showcase.**
 
