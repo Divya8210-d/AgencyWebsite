@@ -87,6 +87,8 @@ export default function Contact() {
       if (response.ok) {
         setStatus({ loading: false, success: true, error: "" });
         setFormData({ name: "", email: "", number: "", about: "" });
+        console.log(response);
+        
         alert("Email sent successfully!");
       } else {
         throw new Error("Failed to send email");
